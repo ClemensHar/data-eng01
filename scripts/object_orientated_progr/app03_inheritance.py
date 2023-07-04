@@ -1,5 +1,5 @@
 import csv 
-from helpers import Item
+from item import Item
 
 # create new child class inheritating from the Item class 
 class Phone(Item):
