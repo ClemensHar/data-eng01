@@ -12,16 +12,16 @@ item2.has_numpad = False
 
 # apply discount
 print("Old price")
-print(item1.price)
+print(item1.__price)
 print("Price after applying discount")
 item1.apply_discount()
 print(f"Discounted price of item {item1.name}")
-print(item1.price)
+print(item1.__price)
 
 print(f"Discounted price of item {item2.name}")
 item2.pay_rate = 0.1  # this will change the attribute on the instance level but not on the Class level
 item2.apply_discount()
-print(item2.price)
+print(item2.__price)
 
 # print the list covering all instances of the Class
 print(Item.all)
