@@ -1,3 +1,4 @@
+import csv 
 class Item:
     # attribute on the class level -> will exist for all intsances of this class 
     pay_rate = 0.8 # The pay rate after 20% discount
@@ -14,19 +15,40 @@ class Item:
         self.quantity = quantity
 
         # Actions to execute 
-        Item.all.append(self)   # append instance to all list 
-        
+        Item.all.append(self)   # append instance to all list
 
     def calculate_total_price(self):
         return self.price * self.quantity
+
     
     def apply_discount(self):
         self.price = self.price * self.pay_rate   # access the attribute "pay_rate" from the item level
+    
+    # in a class method the class must be passed as first object 
+    @classmethod
+    def instatiate_from_csv(cls):
+        with open('items.csv', 'r') as f: 
+            reader = csv.DictReader(f)
+            items = list(reader)
 
-    def instatiate_from_csv(self):
-        pass
+        for item in items:
+            Item(
+                name=item.get('name'), 
+                price=float(item.get('price')), 
+                quantity=int(item.get('quantity')),
+            )
+    # static methods never pass the object itself as the first argument 
+    # refer to it as a regular function 
+    @staticmethod
+    def is_this_a_integer(num):
+        if isinstance(num, float): 
+            return num.is_integer()
+        elif isinstance(num, int): 
+            return True 
+        else: 
+            return False 
     
     # edit the representation of the Object
     # Best practice to represent exectly how you call the object to create an instance  
     def __repr__(self):
-        return f"Item('{self.name}', {self.price}, {self.quantity})"
+        return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
