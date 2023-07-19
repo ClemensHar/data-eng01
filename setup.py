@@ -12,6 +12,7 @@ setup(
         'numpy>=1.23.0',
         'matplotlib>=2.2.0',
         'pandas>=2.0.0',
+        'plotly >= 5.13.0',
         'jupyter>=1.0.0', 
         'tslearn==0.5.3.2'
     ],
