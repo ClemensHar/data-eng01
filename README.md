@@ -1,5 +1,5 @@
 # data-eng01
-Scripts and prototyping notebooks wrt data engineering. 
+Scripts and prototyping notebooks wrt data engineering.
 
 ## Git instructions
 
@@ -45,13 +45,13 @@ Scripts and prototyping notebooks wrt data engineering.
     pip install .
     ```
     OR
-    
+
     Install the python package in development mode in the first place
     ```
     cd /path/to/git/submodule
     pip install -e .
     ```
-    
+
     ---
 
 You could use [pyenv](https://realpython.com/intro-to-pyenv/) or [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-python.html) to

@@ -34,6 +34,7 @@ repos:
         language: system
         types: [python]
         require_serial: true
+        args: ["--profile", "black"]
   - repo: local
     hooks:
       - id: black
